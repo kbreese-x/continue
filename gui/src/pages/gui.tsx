@@ -61,6 +61,7 @@ import {
 } from "../util";
 import { FREE_TRIAL_LIMIT_REQUESTS } from "../util/freeTrial";
 import { getLocalStorage, setLocalStorage } from "../util/localStorage";
+import { ConfigureProvider } from "./AddNewModel";
 
 const TopGuiDiv = styled.div<{
   showScrollbar?: boolean;
@@ -150,7 +151,7 @@ function GUI() {
   const ideMessenger = useContext(IdeMessengerContext);
   const { streamResponse } = useChatHandler(dispatch, ideMessenger);
   const onboardingCard = useOnboardingCard();
-  const { showTutorialCard, closeTutorialCard } = useTutorialCard();
+  const { showTutorialCard, closeTutorialCard, openTutorialCard } = useTutorialCard();
   const sessionState = useSelector((state: RootState) => state.state);
   const defaultModel = useSelector(defaultModelSelector);
   const ttsActive = useSelector((state: RootState) => state.state.ttsActive);
@@ -477,12 +478,13 @@ function GUI() {
                 </div>
               ) : null}
 
-              {onboardingCard.show && (
+              {/* {onboardingCard.show && (
                 <div className="mt-10 mx-2">
                   <OnboardingCard activeTab={onboardingCard.activeTab} />
                 </div>
-              )}
-
+              )} */}
+              <TutorialCard onClose={closeTutorialCard}/>
+              {/* <ConfigureProvider /> */}
               {showTutorialCard !== false && !onboardingCard.open && (
                 <div className="flex justify-center w-full">
                   <TutorialCard onClose={closeTutorialCard} />

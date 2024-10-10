@@ -9,7 +9,12 @@ def main(a: Vector):
 
 class MyClass:
     def test(a: Vector) -> Vector:
-        return a
+        return a[5]
 
 
-raise Exception("This is an error")
+# raise Exception("This is an error")
+
+
+myclass = MyClass()
+
+myclass.test([1,2,3])
