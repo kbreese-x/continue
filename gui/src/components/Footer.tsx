@@ -31,7 +31,8 @@ function Footer() {
 
   function onClickSettings() {
     if (selectedProfileId === "local") {
-      ideMessenger.post("openConfigJson", undefined);
+      navigate("/settings");
+      // ideMessenger.post("openConfigJson", undefined);
     } else {
       ideMessenger.post(
         "openUrl",
