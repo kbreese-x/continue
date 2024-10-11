@@ -46,23 +46,7 @@ function MorePage() {
           </div>
           <IndexingProgress />
         </div>
-        <div className="py-5">
-          <h3 className="text-xl mb-4 mt-0">Help center</h3>
-          <div className="flex flex-col gap-5">
-            <MoreHelpRow
-              title="Tutorial"
-              description="Learn how to use the AI Codebot"
-              Icon={DocumentArrowUpIcon}
-              onClick={() => {
-                navigate("/");
-                // Used to clear the chat panel before showing onboarding card
-                saveSession();
-                ideMessenger.post("showTutorial", undefined);
-              }}
-            />
-          </div>
-        </div>
-
+        
         {/* <div className="py-5">
           <h3 className="text-xl mb-4 mt-0">Help center</h3>
           <div className="flex flex-col gap-5">
@@ -74,49 +58,55 @@ function MorePage() {
                 ideMessenger.post("openUrl", "https://docs.continue.dev/")
               }
             />
-
-            <MoreHelpRow
-              title="Have an issue?"
-              description="Let us know on GitHub and we'll do our best to resolve it"
-              Icon={ArrowTopRightOnSquareIcon}
-              onClick={() =>
-                ideMessenger.post(
-                  "openUrl",
-                  "https://github.com/continuedev/continue/issues/new/choose",
-                )
-              }
-            />
-
-            <MoreHelpRow
-              title="Join the community!"
-              description="Join us on Discord to stay up-to-date on the latest developments"
-              Icon={ArrowTopRightOnSquareIcon}
-              onClick={() =>
-                ideMessenger.post("openUrl", "https://discord.gg/vapESyrFmJ")
-              }
-            />
-
             <MoreHelpRow
               title="Token usage"
               description="Daily token usage across models"
               Icon={TableCellsIcon}
               onClick={() => navigate("/stats")}
             />
+          </div>
+        </div> */}
 
+        <div className="py-5">
+          <h3 className="text-xl mb-4 mt-0">Help center</h3>
+          <div className="flex flex-col gap-5">
+           
             <MoreHelpRow
-              title="Quickstart"
-              description="Reopen the quickstart and tutorial file"
+              title="Tutorial"
+              description="Learn how to use the AI Codebot"
               Icon={DocumentArrowUpIcon}
               onClick={() => {
                 navigate("/");
                 // Used to clear the chat panel before showing onboarding card
                 saveSession();
-                dispatch(setOnboardingCard({ show: true, activeTab: "Best" }));
+                // dispatch(setOnboardingCard({ show: true, activeTab: "Best" }));
                 ideMessenger.post("showTutorial", undefined);
               }}
             />
+
+            <MoreHelpRow
+              title="Give feedback"
+              description="Have an issue? Want to see a new feature? Let us know and we'll do our best to resolve it!"
+              Icon={ArrowTopRightOnSquareIcon}
+              onClick={() =>
+                ideMessenger.post(
+                  "openUrl",
+                  "https://forms.office.com/r/BEHVNtUETS",
+                )
+              }
+            />
+
+            {/* <MoreHelpRow
+              title="Join the community!"
+              description="Join the group chat on Teams to connect with other users, get help, and stay up to date on future updates"
+              Icon={ArrowTopRightOnSquareIcon}
+              onClick={() =>
+                ideMessenger.post("openUrl", "https://discord.gg/vapESyrFmJ")
+              }
+            /> */}
+
           </div>
-        </div> */}
+        </div>
 
         <div>
           <h3 className="mx-auto text-lg mb-1">Keyboard shortcuts</h3>

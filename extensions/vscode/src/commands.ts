@@ -715,19 +715,9 @@ const commandsMap: (
       });
       quickPick.show();
     },
-    "continue.giveAutocompleteFeedback": async () => {
-      const feedback = await vscode.window.showInputBox({
-        ignoreFocusOut: true,
-        prompt:
-          "Please share what went wrong with the last completion. The details of the completion as well as this message will be sent to the Continue team in order to improve.",
-      });
-      if (feedback) {
-        const client = await continueServerClientPromise;
-        const completionsPath = getDevDataFilePath("autocomplete");
-
-        const lastLines = await readLastLines.read(completionsPath, 2);
-        client.sendFeedback(feedback, lastLines);
-      }
+    "continue.giveAutocompleteFeedback": () => {
+      const feedbackFormUrl = "https://forms.office.com/r/BEHVNtUETS";
+      vscode.env.openExternal(vscode.Uri.parse(feedbackFormUrl));
     },
     "continue.navigateTo": (path: string) => {
       sidebar.webviewProtocol?.request("navigateTo", { path });

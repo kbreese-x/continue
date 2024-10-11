@@ -31,3 +31,6 @@
 
 ### General
 1. Remove all unused providers, pages, views, and functionality
+2. Feedback form created [here](https://forms.office.com/r/BEHVNtUETS)
+  - [commands.ts](\extensions\vscode\src\commands.ts)
+  - [More.tsx](\gui\src\pages\More\More.tsx)
