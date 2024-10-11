@@ -214,7 +214,10 @@ class CompletionAPIToolkit implements SageMakerModelToolkit {
     const payload = {
       inputs: prompt,
       prompt: prompt,
-      parameters: this.sagemaker.completionOptions,
+      parameters: {
+        ...this.sagemaker.completionOptions,
+        max_new_tokens: this.sagemaker.completionOptions.maxTokens
+      },
       stream: true,
     };
 
