@@ -483,7 +483,7 @@ function GUI() {
                   <OnboardingCard activeTab={onboardingCard.activeTab} />
                 </div>
               )} */}
-              <TutorialCard onClose={closeTutorialCard}/>
+              {/* <TutorialCard onClose={closeTutorialCard}/> */}
               {/* <ConfigureProvider /> */}
               {showTutorialCard !== false && !onboardingCard.open && (
                 <div className="flex justify-center w-full">

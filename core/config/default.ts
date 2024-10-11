@@ -3,20 +3,34 @@ import {
   ModelDescription,
   SerializedContinueConfig,
   SlashCommandDescription,
+  EmbeddingsProviderDescription,
 } from "../";
 
 export const DEFAULT_CHAT_MODEL_CONFIG: ModelDescription = {
-  model: "claude-3-5-sonnet-20240620",
-  provider: "anthropic",
-  apiKey: "",
-  title: "Claude 3.5 Sonnet",
+  title: "XiFin Chat",
+  provider: "sagemaker",
+  model: "xifin-chat-llama3-1-8b-instruct-endpoint",
+  contextLength: 27000,
 };
 
+export const DEFAULT_EMBEDDINGS_CONFIG: EmbeddingsProviderDescription = {
+  provider: "sagemaker",
+  model: "xifin-embeddings-endpoint",
+  region: "us-west-2",
+  maxBatchSize: 24,
+  profile: "default",
+  requestOptions: {
+    extraBodyProperties: {
+      action: "embed"
+    }
+  }
+}
+
 export const DEFAULT_AUTOCOMPLETE_MODEL_CONFIG: ModelDescription = {
-  title: "Codestral",
-  provider: "mistral",
-  model: "codestral-latest",
-  apiKey: "",
+  title: "Xifin Coder",
+  provider: "sagemaker",
+  model: "xifin-qwen-coder-7b-base-endpoint",
+  contextLength: 4096,
 };
 
 export const FREE_TRIAL_MODELS: ModelDescription[] = [
@@ -111,6 +125,7 @@ export const defaultSlashCommandsJetBrains = [
 export const defaultConfig: SerializedContinueConfig = {
   models: [DEFAULT_CHAT_MODEL_CONFIG],
   tabAutocompleteModel: DEFAULT_AUTOCOMPLETE_MODEL_CONFIG,
+  embeddingsProvider: DEFAULT_EMBEDDINGS_CONFIG,
   customCommands: [
     {
       name: "test",

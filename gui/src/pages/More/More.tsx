@@ -46,8 +46,24 @@ function MorePage() {
           </div>
           <IndexingProgress />
         </div>
-
         <div className="py-5">
+          <h3 className="text-xl mb-4 mt-0">Help center</h3>
+          <div className="flex flex-col gap-5">
+            <MoreHelpRow
+              title="Tutorial"
+              description="Learn how to use the AI Codebot"
+              Icon={DocumentArrowUpIcon}
+              onClick={() => {
+                navigate("/");
+                // Used to clear the chat panel before showing onboarding card
+                saveSession();
+                ideMessenger.post("showTutorial", undefined);
+              }}
+            />
+          </div>
+        </div>
+
+        {/* <div className="py-5">
           <h3 className="text-xl mb-4 mt-0">Help center</h3>
           <div className="flex flex-col gap-5">
             <MoreHelpRow
@@ -100,7 +116,7 @@ function MorePage() {
               }}
             />
           </div>
-        </div>
+        </div> */}
 
         <div>
           <h3 className="mx-auto text-lg mb-1">Keyboard shortcuts</h3>

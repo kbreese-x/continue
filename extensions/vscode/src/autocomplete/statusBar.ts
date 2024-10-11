@@ -44,11 +44,11 @@ const statusBarItemText = (status: StatusBarStatus | undefined) => {
   switch (status) {
     case undefined:
     case StatusBarStatus.Disabled:
-      return "$(circle-slash) Continue";
+      return "$(circle-slash) Codebot";
     case StatusBarStatus.Enabled:
-      return "$(check) Continue";
+      return "$(check) Codebot";
     case StatusBarStatus.Paused:
-      return "$(debug-pause) Continue";
+      return "$(debug-pause) Codebot";
   }
 };
 

@@ -660,9 +660,9 @@ const commandsMap: (
         {
           label: "$(gear) Configure autocomplete options",
         },
-        {
-          label: "$(feedback) Give feedback",
-        },
+        // {
+        //   label: "$(feedback) Give feedback",
+        // },
         {
           kind: vscode.QuickPickItemKind.Separator,
           label: "Switch model",
@@ -687,7 +687,9 @@ const commandsMap: (
         } else if (
           selectedOption === "$(gear) Configure autocomplete options"
         ) {
-          ide.openFile(getConfigJsonPath());
+          // ide.openFile(getConfigJsonPath());
+          focusGUI();
+          vscode.commands.executeCommand("continue.navigateTo", "/settings");
         } else if (
           autocompleteModels.some((model) => model.title === selectedOption)
         ) {

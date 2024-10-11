@@ -86,10 +86,10 @@ export function TutorialCard({ onClose }: TutorialCardProps) {
         <li className="flex items-start">
           <Cog6ToothIcon className="align-middle pr-3 h-4 w-4" />
           <span>
-            Click the gear icon in the bottom right to configure Continue
+            Click the gear icon in the bottom right to configure settings
           </span>
         </li>
-        <li className="flex items-start">
+        {/* <li className="flex items-start">
           <BookOpenIcon className="align-middle pr-3 h-4 w-4" />
           <span>
             <a
@@ -101,7 +101,7 @@ export function TutorialCard({ onClose }: TutorialCardProps) {
             </a>{" "}
             to learn more
           </span>
-        </li>
+        </li> */}
       </ul>
     </TutorialCardDiv>
   );
