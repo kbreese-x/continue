@@ -136,6 +136,7 @@ export const defaultConfig: SerializedContinueConfig = {
   ],
   contextProviders: defaultContextProvidersVsCode,
   slashCommands: defaultSlashCommandsVscode,
+  allowAnonymousTelemetry: false,
 };
 
 export const defaultConfigJetBrains: SerializedContinueConfig = {
